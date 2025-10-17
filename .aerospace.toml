@@ -1,0 +1,126 @@
+# Place a copy of this config to ~/.aerospace.toml
+# After that, you can edit ~/.aerospace.toml to your liking
+
+# All possible keys:
+# - Letters.        a, b, c, ..., z
+# - Numbers.        0, 1, 2, ..., 9
+# - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
+# - F-keys.         f1, f2, ..., f20
+# - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
+#                   leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
+# - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
+#                   keypadMinus, keypadMultiply, keypadPlus
+# - Arrows.         left, down, up, right
+
+# All possible modifiers: cmd, alt, ctrl, shift
+# All possible commands: https://nikitabobko.github.io/AeroSpace/commands
+
+start-at-login = true
+accordion-padding = 30
+
+[gaps]
+inner.horizontal = 10
+inner.vertical = 10
+outer.left = 10
+outer.bottom = 10
+outer.top = 10
+outer.right = 10
+
+[mode.main.binding]
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+alt-shift-minus = 'resize smart -50'
+alt-shift-equal = 'resize smart +50'
+
+alt-0 = 'workspace 0'
+alt-1 = 'workspace 1' # floating layout (all other apps land here)
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+alt-a = 'workspace A' # AI (perplexity)
+alt-b = 'workspace B' # browser
+alt-c = 'workspace C' # calendar
+alt-e = 'workspace E' # editor (coding)
+alt-m = 'workspace M' # mail
+alt-t = 'workspace T' # terminal
+
+alt-shift-0 = 'move-node-to-workspace 0'
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-a = 'move-node-to-workspace A'
+alt-shift-b = 'move-node-to-workspace B'
+alt-shift-c = 'move-node-to-workspace C'
+alt-shift-e = 'move-node-to-workspace E'
+alt-shift-m = 'move-node-to-workspace M'
+alt-shift-t = 'move-node-to-workspace T'
+
+alt-shift-f = 'fullscreen'
+
+alt-tab = 'workspace-back-and-forth'
+alt-shift-tab = 'move-workspace-to-display next'
+
+# To get the list of apps, run:
+# aerospace list-apps
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = ["move-node-to-workspace 8"]
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.beta'
+run = ["move-node-to-workspace 9"]
+
+[[on-window-detected]]
+if.app-id = 'ai.perplexity.mac'
+run = ["move-node-to-workspace A"]
+
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
+run = ["move-node-to-workspace A"]
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = "move-node-to-workspace B"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = ["move-node-to-workspace C"]
+
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = ["move-node-to-workspace E"]
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = ["move-node-to-workspace M"]
+
+[[on-window-detected]]
+if.app-id = 'com.googlecode.iterm2'
+run = ["move-node-to-workspace T"]
+
+# Move all other apps to the workspace 1 and use a floating layout
+[[on-window-detected]]
+run = ["layout floating", "move-node-to-workspace 1"]
