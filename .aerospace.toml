@@ -40,8 +40,10 @@ alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+alt-shift-minus = 'resize smart -150'
+alt-shift-equal = 'resize smart +150'
+cmd-alt-shift-minus = 'resize smart -50'
+cmd-alt-shift-equal = 'resize smart +50'
 
 alt-0 = 'workspace 0'
 alt-1 = 'workspace 1' # floating layout (all other apps land here)
