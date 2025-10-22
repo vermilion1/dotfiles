@@ -108,6 +108,10 @@ if.app-id = 'com.openai.chat'
 run = ["move-node-to-workspace A"]
 
 [[on-window-detected]]
+if.app-id = 'com.atlassian.rovo.desktop'
+run = ["move-node-to-workspace A"]
+
+[[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = ["move-node-to-workspace B"]
 
